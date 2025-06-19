@@ -14,22 +14,21 @@
 
 ```mermaid
 graph TD
-    A[Client<br/>(클라이언트) 5000]
-    A --> B[Company Code<br/>(회사코드) 1000]
-    B --> C[Plant<br/>(플랜트) 1000]
-    C --> D[Shipping Point<br/>(출하지점) 0001]
-    C --> E[Storage Location<br/>(저장창고) 1000]
+  A["Client\n(클라이언트) 5000"]
+  A --> B["Company Code\n(회사코드) 1000"]
+  B --> C["Plant\n(플랜트) 1000"]
+  C --> D["Shipping Point\n(출하지점) 0001"]
+  C --> E["Storage Location\n(저장창고) 1000"]
 
-    subgraph Sales
-      direction TB
-      F[Sales Area<br/>(영업영역) 1000]
-      F --> G[Sales Organization<br/>(영업조직)]
-      F --> H[Distribution Channel<br/>(유통채널)]
-      F --> I[Division<br/>(제품군)]
-      I --> J[Sales Office<br/>(사업장)]
-      J --> K[Sales Group<br/>(영업그룹)]
-      K --> L[Sales Person<br/>(영업사원)]
-    end
+  subgraph Sales [Sales Area\n(영업영역) 1000]
+    direction TB
+    G["Sales Organization\n(영업조직)"]
+    H["Distribution Channel\n(유통채널)"]
+    I["Division\n(제품군)"]
+    G & H & I --> J["Sales Office\n(사업장)"]
+    J --> K["Sales Group\n(영업그룹)"]
+    K --> L["Sales Person\n(영업사원)"]
+  end
 
 
 

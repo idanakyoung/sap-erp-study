@@ -10,26 +10,36 @@
 
 
 (Hierarchy)
-## 1️⃣ SD 모듈 조직 구조 (Mermaid 다이어그램)
 
-```mermaid
-graph TD
-  A["Client\n(클라이언트) 5000"]
-  A --> B["Company Code\n(회사코드) 1000"]
-  B --> C["Plant\n(플랜트) 1000"]
-  C --> D["Shipping Point\n(출하지점) 0001"]
-  C --> E["Storage Location\n(저장창고) 1000"]
+    Client (클라이언트) 5000
+                        │
+                Company Code (회사코드) 1000
+                        │
+                   Plant (플랜트) 1000
+                        │
+        ┌───────────────┴───────────────┐
+        │                               │
+    Shipping Point                  Storage Location
+    (출하지점) 0001                   (저장창고) 1000
 
-  subgraph Sales [Sales Area\n(영업영역) 1000]
-    direction TB
-    G["Sales Organization\n(영업조직)"]
-    H["Distribution Channel\n(유통채널)"]
-    I["Division\n(제품군)"]
-    G & H & I --> J["Sales Office\n(사업장)"]
-    J --> K["Sales Group\n(영업그룹)"]
-    K --> L["Sales Person\n(영업사원)"]
-  end
+---
 
+                   Sales Area (영업영역) 1000
+                     /       |         \
+       Sales Organization  Distribution  Division
+         (영업조직)            Channel      (제품군)
+                            (유통채널)
+
+---
+
+                       Sales Office
+                        (사업장)
+                          │
+                       Sales Group
+                       (영업그룹)
+                          │
+                      Sales Person
+                      (영업사원)
 
 
 | 🔹 구분                      | 설명                                                                                                                                                                      |
